@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { cartSelector } from 'store/cart/cart.action';
+import { cartSelector } from 'store/cart/cart.selector';
 
 const Cart = () => {
 
