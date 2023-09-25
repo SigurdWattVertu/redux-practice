@@ -1,18 +1,13 @@
-import './App.css';
+import './App.scss';
 import Cart from 'components/cart/cart'
-import { useDispatch, useSelector } from 'react-redux';
-import { addItemToCart, removeItemFromCart } from 'store/cart/cart.action';
-import { cartSelector } from 'store/cart/cart.selector';
+import { useDispatch } from 'react-redux';
+import { removeItemFromCart } from 'store/cart/cart.action';
 import Products from 'components/products/products'
 
 function App() {
 
   const dispatch = useDispatch()
-  const cart = useSelector(cartSelector)
 
-  function addItem() {
-    dispatch(addItemToCart(cart.cartTotal))
-  }
 
   function removeItem(){
     dispatch(removeItemFromCart(cart.cartTotal))
@@ -20,12 +15,13 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='app-container grid vgap-3'>
+      <header>
+        <h3 className='text-center'>Sigurds Music Shop</h3>
+        <div className='flex justify-end'><Cart /></div>
+      </header>
       <Products />
-      <Cart />
-      <button onClick={addItem}>Add Item to Cart</button>
-      <button onClick={removeItem}>Add Item to Cart</button>
-
+      <button onClick={removeItem}>Take away Item from Cart</button>
     </div>
   );
 }

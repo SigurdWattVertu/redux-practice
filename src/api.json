@@ -1,0 +1,19 @@
+{
+    "items": [
+        {
+            "name": "Guitar",
+            "price": 100,
+            "id": 1
+           },
+           {
+            "name": "Drums",
+             "price": 500,
+             "id": 2
+            }, 
+            {
+            "name": "Piano",
+            "price": 2000,
+            "id": 3
+        }
+    ]
+}
