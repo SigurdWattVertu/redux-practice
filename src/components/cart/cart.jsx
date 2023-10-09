@@ -5,11 +5,12 @@ const Cart = () => {
 
     const cart = useSelector(cartSelector)
 
-    console.log(cart)
-
     return (
         <div>
-            <p>Cart Total: { cart.cartTotal}</p>
+            <h3>Cart</h3>
+            <p>{cart.items.map(item => (
+                <p>{item.name} x {item.quantity}</p>
+            ))}</p>
         </div>
     )
 }
