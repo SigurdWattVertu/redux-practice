@@ -1,20 +1,29 @@
-import './App.scss';
+import './App.scss'
 import Cart from 'components/cart/cart'
-import Products from 'components/products/products'
+import HomePage from 'pages/home/home'
+import CartPage from 'pages/cart/cart'
+import { Routes, Route, Link } from 'react-router-dom'
 
 function App() {
+    return (
+        <div className="app-container grid vgap-3">
+            <header>
+                <Link to="/">
+                    <h3 className="text-center">Sigurds Music Shop</h3>
+                </Link>
+                <div className="flex justify-end">
+                    <Link to="/cart">
+                        <Cart />
+                    </Link>
+                </div>
+            </header>
 
-
-  return (
-    <div className='app-container grid vgap-3'>
-      <header>
-        <h3 className='text-center'>Sigurds Music Shop</h3>
-        <div className='flex justify-end'><Cart /></div>
-      </header>
-      <Products />
-      {/* <button onClick={}>Take away Item from Cart</button> */}
-    </div>
-  );
+            <Routes path="/">
+                <Route index element={<HomePage />} />
+                <Route path="cart" element={<CartPage />} />
+            </Routes>
+        </div>
+    )
 }
 
-export default App;
+export default App

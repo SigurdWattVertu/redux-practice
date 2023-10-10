@@ -9,7 +9,6 @@ export const fetchProductsStart = () => createAction(PRODUCT_ACTION_TYPES.FETCH_
 
 export const fetchProductsSuccess = (products) => createAction(PRODUCT_ACTION_TYPES.FETCH_PRODUCTS_SUCCESS, products)
 
-
 export const fetchProductsFailure = (error) => createAction(PRODUCT_ACTION_TYPES.FETCH_PRODUCTS_FAILED, error)
 
 
