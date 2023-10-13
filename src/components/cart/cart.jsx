@@ -1,19 +1,18 @@
 import { useSelector } from 'react-redux'
 import { cartSelector } from 'store/cart/cart.selector'
+import './cart.scss'
 
 const Cart = () => {
-    const cart = useSelector(cartSelector)
+    const { items } = useSelector(cartSelector)
+
+    console.log(items)
 
     return (
-        <div>
-            <h3>Cart</h3>
-            <p>
-                {cart.items.map((item) => (
-                    <p>
-                        {item.name} x {item.quantity}
-                    </p>
-                ))}
-            </p>
+        <div className="cart">
+            <div className="flex">
+                <h3>Cart</h3>
+                <p>{items.length}</p>
+            </div>
         </div>
     )
 }
