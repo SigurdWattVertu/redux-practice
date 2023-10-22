@@ -11,15 +11,15 @@ export type FetchProductsSuccess = ActionWithPayload<PRODUCT_ACTION_TYPES.FETCH_
 
 export const fetchProductsStart = () => createAction(PRODUCT_ACTION_TYPES.FETCH_PRODUCTS_START)
 
-export const fetchProductsSuccess = (products) => createAction(PRODUCT_ACTION_TYPES.FETCH_PRODUCTS_SUCCESS, products)
+export const fetchProductsSuccess = (products: any) => createAction(PRODUCT_ACTION_TYPES.FETCH_PRODUCTS_SUCCESS, products)
 
-export const fetchProductsFailure = (error) => createAction(PRODUCT_ACTION_TYPES.FETCH_PRODUCTS_FAILED, error)
+export const fetchProductsFailure = (error: any) => createAction(PRODUCT_ACTION_TYPES.FETCH_PRODUCTS_FAILED, error)
 
 // Redux Thunk recommends that we declare our THUNK ACTIONS with 'async'
 // So we know this action creator function and know it is async / a thunk
 
 // It is a function, which returns a function, which returns a dispatch
-export const fetchProductsAsync = () => async (dispatch) => {
+export const fetchProductsAsync = () => async (dispatch: any) => {
     dispatch(fetchProductsStart())
     try {
         fetch(`http://localhost:8080/products`, { mode: 'cors' })
